@@ -3,17 +3,16 @@ package util;
 
 class StringUtilTest {
     public static void main(String[] args) {
-        String result =  StringUtil.repeat("hello",3);
-        System.out.println(result);
-        if(!result.equals("hellohellohello")){
-            System.out.println("ERROR");
-        }
+        assertEquals(StringUtil.repeat("hola", 3), "holaholahola");
+        assertEquals(StringUtil.repeat("hola", 1), "hola");
+    }
 
-        String result2 =  StringUtil.repeat("hello",2);
-        System.out.println(result);
-        if(!result.equals("hellohello")){
-            System.out.println("ERROR");
+    private static void assertEquals(String actual, String expected) {
+
+        if (!actual.equals(expected)) {
+            throw new RuntimeException(actual + " is not equal to expected " + expected);
         }
     }
+
 
 }
