@@ -2,7 +2,7 @@ package util;
 
 public class StringUtil {
     public static String repeat(String str, int times) {
-        String result = "hellohellohello";
+        String result = "";
         if(result ==""){
             System.out.println("OK");
         }
