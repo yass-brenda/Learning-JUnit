@@ -38,24 +38,24 @@ public class MovieRepositoryJdbcTest {
         // Connection BD
         Collection<Movie> movies = movieRepository.findAll();
         assertThat(movies,CoreMatchers.is(Arrays.asList(
-                new Movie(1, "Dark Knight", 152, Genre.ACTION),
-                new Movie(2, "Memento", 113, Genre.THRILLER),
-                new Movie(3, "Matrix", 136, Genre.ACTION)
+                new Movie(1, "Dark Knight", 152, Genre.ACTION,"Ulisses"),
+                new Movie(2, "Memento", 113, Genre.THRILLER,"Ulisses"),
+                new Movie(3, "Matrix", 136, Genre.ACTION, "Diego")
         )));
     }
 
     @Test
     public void load_movie(){
         Movie movie = movieRepository.findById(2);
-        assertThat(movie,CoreMatchers.is(new Movie(2, "Memento", 113, Genre.THRILLER)));
+        assertThat(movie,CoreMatchers.is(new Movie(2, "Memento", 113, Genre.THRILLER,"Ulisses")));
     }
 
     @Test
     public void insert_one_movie(){
-        Movie movie = new Movie("Super 8",112,Genre.THRILLER);
+        Movie movie = new Movie("Super 8",112,Genre.THRILLER,"Diego");
         movieRepository.saveOrUpdate(movie);
         Movie movieFromDb = movieRepository.findById(4);
-        assertThat(movieFromDb,CoreMatchers.is(new Movie(4, "Super 8",112,Genre.THRILLER)));
+        assertThat(movieFromDb,CoreMatchers.is(new Movie(4, "Super 8",112,Genre.THRILLER,"Diego")));
     }
 
     // Borrar o reiniciar base de datos.
@@ -64,5 +64,6 @@ public class MovieRepositoryJdbcTest {
         final Statement s = dataSource.getConnection().createStatement();
         s.execute("drop all objects delete files");
     }
-
+        
 }
+

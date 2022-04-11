@@ -37,6 +37,7 @@ public class MovieRepositoryJdbc implements MovieRepository {
                     rs.getInt("id"),
                     rs.getString("name"),
                     rs.getInt("minutes"),
-                    Genre.valueOf(rs.getString("genre")));
+                    Genre.valueOf(rs.getString("genre")),
+                    rs.getString("director"));
 
 }
