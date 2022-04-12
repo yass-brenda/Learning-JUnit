@@ -18,8 +18,8 @@ You can clone this repository and to use a Java version 8.0 onwords.
 git clone https://github.com/yass-brenda/Learning-JUnit.git
 `
 
-In the folder java you can to found the differents ejercises divided in distint folder.
-For excute the test you to go the folder test and  put in the file you want to run the test.
+In the folder java you can to found the differents ejercises divided in different folder.
+For excute the test you to go the folder test and put in the file you want to run the test.
 
 
 # 
